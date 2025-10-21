@@ -1,0 +1,62 @@
+:root{
+    --bg1:#ffecd2; --bg2:#fcb69f; --card:#ffffffcc;
+    --accent:#ff4d6d; --muted:#666;
+}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+body{
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    padding:2rem;
+}
+.card{
+    width:100%;max-width:720px;background:var(--card);border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);padding:2rem;position:relative;
+    overflow:hidden;text-align:center;
+}
+h1{margin:0;font-size:2.25rem;color:var(--accent)}
+p.lead{margin:.5rem 0 1.25rem;color:var(--muted)}
+.controls{display:flex;gap:.5rem;justify-content:center;margin-bottom:1rem}
+input{
+    padding:.6rem .75rem;border-radius:10px;border:1px solid #eee;
+    font-size:1rem;flex:1;max-width:260px;
+}
+button{
+    padding:.65rem 1rem;border-radius:10px;border:0;background:var(--accent);
+    color:#fff;font-weight:600;cursor:pointer;
+    box-shadow:0 6px 18px rgba(255,77,109,.18);
+}
+.greeting{
+    font-size:1.15rem;margin-top:1rem;color:#222;min-height:1.4em;
+    transition:transform .35s,opacity .35s;
+}
+
+/* Balloons / confetti */
+.sky{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.balloon{
+    width:40px;height:52px;border-radius:50% 50% 45% 45%;
+    position:absolute;bottom:-80px;opacity:0;transform:translateY(0) scale(.9);
+    animation:rise 6s linear forwards;
+    box-shadow:inset -6px -6px 18px rgba(0,0,0,.06);
+}
+.balloon::after{
+    content:"";position:absolute;left:50%;transform:translateX(-50%);
+    width:2px;height:60px;background:rgba(0,0,0,.08);bottom:-58px;border-radius:2px;
+}
+.b1{background:#ff7ab6;left:12% ;animation-delay:.2s}
+.b2{background:#ffd166;left:30% ;animation-delay:.6s}
+.b3{background:#70d6ff;left:50% ;animation-delay:.4s}
+.b4{background:#b0ffb3;left:68% ;animation-delay:.8s}
+.b5{background:#c39eff;left:84% ;animation-delay:1s}
+
+@keyframes rise{
+    0%{transform:translateY(0) scale(.9);opacity:0}
+    10%{opacity:1}
+    100%{transform:translateY(-140vh) scale(1);opacity:1}
+}
+
+/* show when active */
+.active .balloon{animation-play-state:running}
+.balloon{animation-play-state:paused}
+
+footer{font-size:.85rem;color:var(--muted);margin-top:1.25rem}
+@media (max-width:420px){h1{font-size:1.6rem}}
