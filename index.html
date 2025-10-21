@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="card" id="card">
+        <h1>Happy Birthday!</h1>
+        <p class="lead">Send a warm wish — personalize it below and celebrate 🎉</p>
+
+        <div class="controls">
+            <input id="name" placeholder="Friend's name (optional)" aria-label="Name" />
+            <button id="btn">Celebrate!</button>
+        </div>
+
+        <div class="greeting" id="greeting">Wishing you a day filled with happiness and a year filled with joy.</div>
+
+        <div class="sky" aria-hidden="true">
+            <div class="balloon b1"></div>
+            <div class="balloon b2"></div>
+            <div class="balloon b3"></div>
+            <div class="balloon b4"></div>
+            <div class="balloon b5"></div>
+        </div>
+
+        <footer>Tip: enter a name and press Celebrate to show a personalized message.</footer>
+    </div>
+
+    <script src="function.js"></script>
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCPcwfr5B6qT363j36Gf0bGnSTwTBnxZbY",
+        authDomain: "hbd-pri.firebaseapp.com",
+        projectId: "hbd-pri",
+        storageBucket: "hbd-pri.firebasestorage.app",
+        messagingSenderId: "641502199641",
+        appId: "1:641502199641:web:dc3dc56ba8056fcebc9648",
+        measurementId: "G-0W753H30ZM"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    </script>
+</body>
+</html>
