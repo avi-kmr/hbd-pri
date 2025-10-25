@@ -3,12 +3,16 @@ body {
   font-family: "Poppins", sans-serif;
   text-align: center;
   color: #fff;
-  display: inline-flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center;     /* centers vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
+
 
 .container {
   margin-top: 80px;
@@ -21,27 +25,17 @@ h1 {
 }
 
 .message-box {
+  max-width: 90%;
   width: 600px;
-  height: 600px;
-  padding: 50px;
-  margin: 0 15px;
-  padding: 10px 20px;
+  padding: 20px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
-  
-  /* translucent background */
-  background: rgba(255, 255, 255, 0.2); /* white tint at 20% opacity */
-  backdrop-filter: blur(10px); /* glass effect (optional, looks great) */
-  -webkit-backdrop-filter: blur(10px);
-
-  overflow: hidden;
-  display: inline-block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
 }
+
 
 /* Optional: text styling */
 .message-box h2 {
@@ -62,23 +56,28 @@ h1 {
 .photos {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 30px;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px auto;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .photos img {
-  width: 600px;
-  height: 800px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .photos img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
+
 
 .social-links a {
   display: inline-block;
@@ -117,6 +116,67 @@ h1 {
   background: #125688;
   color: white;
 }
+
+.whatsapp-link {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.whatsapp-link a {
+  display: inline-block;
+  background-color: #25D366; /* WhatsApp green */
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.whatsapp-link a:hover {
+  background-color: #20b358;
+}
+
+.fa-whatsapp {
+  margin-right: 10px;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  .message-box h2 {
+    font-size: 1.2em;
+  }
+  .photos img {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+  .message-box {
+    padding: 15px;
+  }
+  .message-box h2 {
+    font-size: 1em;
+  }
+  .photos img {
+    max-width: 100%;
+  }
+  .whatsapp-link a {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}
+
 
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(-20px);}

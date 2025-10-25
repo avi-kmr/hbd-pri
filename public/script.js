@@ -6,6 +6,16 @@ const friend = {
   words: ""
 };
 
+window.addEventListener('resize', () => {
+  const width = window.innerWidth;
+  if (width < 600) {
+    document.body.style.background = 'linear-gradient(135deg, #fbc2eb, #a6c1ee)';
+  } else {
+    document.body.style.background = 'linear-gradient(135deg, #ff9a9e, #fad0c4)';
+  }
+});
+
+
 // Display the birthday message
 document.getElementById("birthdayMessage").innerText = `🎉 Happy Birthday, ${friend.name}! 🎂`;
 setTimeout(() => {
